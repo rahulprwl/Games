@@ -4,7 +4,7 @@ import Board from "./board";
 const MineHome = () => {
   return (
     <div>
-      <Board size={16} bombs={40} />
+      <Board size={9} bombs={16} />
     </div>
   );
 };

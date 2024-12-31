@@ -20,6 +20,15 @@ export default {
       pattern: /^bg-amber-/,
     },
     {
+      pattern: /^bg-grey-/,
+    },
+    {
+      pattern: /^bg-blue-/,
+    },
+    {
+      pattern: /^bg-red-/,
+    },
+    {
       pattern: /^grid-rows-/,
     },
   ],

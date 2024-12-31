@@ -1,10 +1,7 @@
 export const generateBoard = (size: number, bombs: number): number[][] => {
   let board = Array.from({ length: size }, () => Array(size).fill(-1));
-  console.log("board: ", board);
   board = placeBombs(board, bombs);
-  console.log("bombs placed board: ", board);
   board = populateRemaining(board, size);
-  console.log("All Populated Board: ", board);
   return board;
 };
 
@@ -64,8 +61,43 @@ const foundBomb = (board: number[][], i: number, j: number) => {
   }
 };
 
-function newBombNear(board: number[][], arg1: number, arg2: number) {
+const newBombNear = (board: number[][], arg1: number, arg2: number) => {
   if (board[arg1][arg2] !== 0) {
     board[arg1][arg2] = board[arg1][arg2] == -1 ? 1 : board[arg1][arg2] + 1;
   }
-}
+};
+
+export const computeResults = (
+  board: (number | boolean)[][][],
+  bombs: number
+): {
+  foundBomb: number;
+  mineBlast: boolean;
+  stillMystery: number;
+  won: boolean;
+} => {
+  const size = board.length;
+  const result = {
+    foundBomb: 0,
+    mineBlast: false,
+    stillMystery: 0,
+    won: false,
+  };
+  board.forEach((row) => {
+    row.forEach((block) => {
+      if (block[0] === 0 && block[1] && !block[2]) {
+        result.mineBlast = true;
+      }
+      if (block[0] === 0 && block[2]) {
+        result.foundBomb += 1;
+      }
+      if (!block[1] && !block[2]) {
+        result.stillMystery += 1;
+      }
+    });
+  });
+  if (result.foundBomb === bombs && result.stillMystery === 0) {
+    result.won = true;
+  }
+  return result;
+};
