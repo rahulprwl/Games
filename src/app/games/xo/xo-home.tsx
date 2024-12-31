@@ -1,10 +1,11 @@
+import Header from "@/app/shared/header";
 import Board from "./board";
 
 export default () => {
   return (
     <div>
-      Welcome to XO
-      <Board></Board>
+      <Header heading={"Welcome to XO"} />
+      <Board />
     </div>
   );
 };
