@@ -1,11 +1,11 @@
-export default ({
+const Block = ({
   value,
   onClick,
   disabled,
   winner,
 }: {
   value: "X" | "O" | "-";
-  onClick: Function;
+  onClick: () => void;
   winner?: boolean;
   disabled: boolean;
 }) => {
@@ -32,3 +32,5 @@ const computeBackground = (
   }
   return "bg-amber-" + (hover ? "700" : value === "-" ? "600" : "400");
 };
+
+export default Block;

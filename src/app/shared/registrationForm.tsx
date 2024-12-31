@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 
-export default ({
+const RegistrationForm = ({
   addressee,
   onSubmit,
   onCancel,
 }: {
   addressee: string;
-  onSubmit: any;
-  onCancel: any;
+  onSubmit: ({ name }: { name: string }) => void;
+  onCancel: () => void;
 }) => {
   const [name, setName] = useState("");
   return (
@@ -26,10 +26,16 @@ export default ({
           </span>
         </div>
         <div className="py-2 content-center">
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={()=>onSubmit({name:name})}>
+          <button
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => onSubmit({ name: name })}
+          >
             Submit
           </button>
-          <button className="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={onCancel}>
+          <button
+            className="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => onCancel()}
+          >
             Cancel
           </button>
         </div>
@@ -37,3 +43,5 @@ export default ({
     </>
   );
 };
+
+export default RegistrationForm;

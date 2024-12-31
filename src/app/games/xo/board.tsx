@@ -1,11 +1,12 @@
 "use client";
 
+import React from "react";
 import { useState } from "react";
 import Block from "./block";
 import { checkWinningCombination } from "./GameHelper";
 import DisplayWinner from "@/app/shared/display-winner";
 
-export default () => {
+const Board = () => {
   const gameState: ("X" | "O" | "-")[][] = [
     ["-", "-", "-"],
     ["-", "-", "-"],
@@ -15,7 +16,7 @@ export default () => {
   const [game, setGame] = useState(gameState);
   const [turn, setTurn] = useState<"X" | "O" | "-">("X");
   const [winnerName, setWinnerName] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
 
   const play = (i: number, j: number) => {
     if (!winnerName) game[i][j] = turn;
@@ -55,3 +56,5 @@ export default () => {
     </div>
   );
 };
+
+export default Board;

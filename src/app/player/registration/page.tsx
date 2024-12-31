@@ -1,5 +1,7 @@
-import PlayerRegistration from "./player-registration"
+import PlayerRegistration from "./player-registration";
 
-export default ()=>{
-    return <PlayerRegistration/>
-}
+const page = () => {
+  return <PlayerRegistration />;
+};
+
+export default page;
