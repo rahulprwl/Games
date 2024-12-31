@@ -1,5 +1,12 @@
-import XoHome from "./xo-home"
+import React from "react";
+import XoHome from "./xo-home";
 
-export default ()=>{
-    return <XoHome></XoHome>
-}
+const page = () => {
+  return (
+    <div>
+      <XoHome />
+    </div>
+  );
+};
+
+export default page;
