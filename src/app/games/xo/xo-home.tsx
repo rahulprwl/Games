@@ -5,7 +5,7 @@ const XoHome = () => {
   return (
     <div>
       <Header heading={"Welcome to XO"} />
-      <Board />
+      <Board size={3} />
     </div>
   );
 };

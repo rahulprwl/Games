@@ -6,17 +6,14 @@ import Block from "./block";
 import { checkWinningCombination } from "./GameHelper";
 import DisplayWinner from "@/app/shared/display-winner";
 
-const Board = () => {
-  const gameState: ("X" | "O" | "-")[][] = [
-    ["-", "-", "-"],
-    ["-", "-", "-"],
-    ["-", "-", "-"],
-  ];
+const Board = ({ size }: { size: number }) => {
+  const gameState: ("X" | "O" | "-")[][] = Array.from({ length: size }, () =>
+    Array(size).fill("-")
+  );
 
   const [game, setGame] = useState(gameState);
   const [turn, setTurn] = useState<"X" | "O" | "-">("X");
   const [winnerName, setWinnerName] = useState<string | null>(null);
-  // const [error, setError] = useState<string | null>(null);
 
   const play = (i: number, j: number) => {
     if (!winnerName) game[i][j] = turn;
@@ -32,9 +29,11 @@ const Board = () => {
     }
   };
 
+  const gridClass = `p-4 grid grid-rows-${size.toString()} grid-flow-col`;
+
   return (
     <div className="grid-flow-row">
-      <div className="p-4 grid grid-rows-3 grid-flow-col">
+      <div className={gridClass}>
         {game.map((row, idx) => (
           <div key={idx}>
             {row.map((block, idx2) => (
