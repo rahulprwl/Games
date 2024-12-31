@@ -95,7 +95,6 @@ const Board = ({ size, bombs }: { size: number; bombs: number }) => {
 
   return (
     <>
-      <Counter label={"Found Bomb"} count={results?.foundBomb ?? 0} />
       {gameState && (
         <SweeperGame
           board={gameState}
@@ -104,6 +103,7 @@ const Board = ({ size, bombs }: { size: number; bombs: number }) => {
           bombs={bombs}
           onPlay={chance}
           onFlag={flag}
+          foundFlags={results?.foundBomb ?? 0}
         />
       )}
       {results?.won && (

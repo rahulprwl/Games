@@ -9,6 +9,9 @@ const Menu = () => {
       <Link href={"games/xo"}>
         <Button actionId={"TicTac"} text={" Play TicTac"}></Button>
       </Link>
+      <Link href={"games/minesweeper"}>
+        <Button actionId={"Minesweeper"} text={"Play MineSweeper"}></Button>
+      </Link>
     </menu>
   );
 };

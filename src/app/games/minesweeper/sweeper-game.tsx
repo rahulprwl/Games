@@ -1,12 +1,13 @@
 import React from "react";
-import Counter from "./counter";
 import Block from "./block";
+import CountersFlex from "./counters-flex";
 
 const SweeperGame = ({
   board,
   flags,
   complete,
   bombs,
+  foundFlags,
   onPlay,
   onFlag,
 }: {
@@ -14,14 +15,29 @@ const SweeperGame = ({
   flags: number;
   complete: boolean;
   bombs: number;
+  foundFlags: number;
   onPlay: (i: number, j: number) => void;
   onFlag: (i: number, j: number) => void;
 }) => (
   <>
-    <Counter label={"Mines"} count={bombs}></Counter>
-    <Counter label={"Flags"} count={flags}></Counter>
-    <Counter label={"Remaining Flags"} count={bombs - flags}></Counter>
-    <div className="grid grid-rows-9 grid-flow-col justify-start">
+    <CountersFlex
+      counters={[
+        { label: "Mines", count: bombs },
+        {
+          label: "Flags",
+          count: flags,
+        },
+        {
+          label: "Remaining Flags",
+          count: bombs - flags,
+        },
+        {
+          label: "Found Bomb",
+          count: foundFlags,
+        },
+      ]}
+    />
+    <div className="grid grid-rows-9 grid-flow-col justify-center">
       {board &&
         board.map((row, i) =>
           row.map((element, j) => (
