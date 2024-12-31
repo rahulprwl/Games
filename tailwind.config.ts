@@ -15,4 +15,5 @@ export default {
     },
   },
   plugins: [],
+  safelist: ["bg-amber-500", "bg-amber-600", "bg-amber-400"],
 } satisfies Config;
