@@ -9,7 +9,7 @@ const DisplayWinner = ({
 }) => {
   return (
     <>
-      <span className="text-pretty text-xl font-serif text-green-700">{`Congratulations! ${winnerName} you won the ${gameName}`}</span>
+      <div className="text-xl font-serif text-green-700 animate-pulse p-3 m-4">{`Congratulations! ${winnerName} you won the ${gameName}`}</div>
     </>
   );
 };
