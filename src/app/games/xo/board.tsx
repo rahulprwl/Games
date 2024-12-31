@@ -32,7 +32,7 @@ const Board = ({ size }: { size: number }) => {
   const gridClass = `p-4 grid grid-rows-${size.toString()} grid-flow-col`;
 
   return (
-    <div className="grid-flow-row">
+    <div className="grid-flow-row text-center">
       <div className={gridClass}>
         {game.map((row, idx) => (
           <div key={idx}>

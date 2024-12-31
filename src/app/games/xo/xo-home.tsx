@@ -8,9 +8,11 @@ const XoHome = () => {
     <div>
       <Header heading={"Welcome to RP's TicTac"} />
       <Board size={3} />
-      <Link href={"/"}>
-        <Button text={"Back to Home"} />
-      </Link>
+      <div className="text-center my-4">
+        <Link href={"/"}>
+          <Button text={"Back to Home"} />
+        </Link>
+      </div>
     </div>
   );
 };
