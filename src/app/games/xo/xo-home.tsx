@@ -7,7 +7,7 @@ const XoHome = () => {
   return (
     <div>
       <Header heading={"Welcome to RP's TicTac"} />
-      <Board size={5} />
+      <Board size={3} />
       <Link href={"/"}>
         <Button text={"Back to Home"} />
       </Link>
