@@ -4,8 +4,8 @@ import Board from "./board";
 const XoHome = () => {
   return (
     <div>
-      <Header heading={"Welcome to XO"} />
-      <Board size={3} />
+      <Header heading={"Welcome to RP's TicTac"} />
+      <Board size={5} />
     </div>
   );
 };
