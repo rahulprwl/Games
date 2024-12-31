@@ -29,7 +29,16 @@ export default {
       pattern: /^bg-red-/,
     },
     {
+      pattern: /^bg-green-/,
+    },
+    {
+      pattern: /^bg-yellow-/,
+    },
+    {
       pattern: /^grid-rows-/,
+    },
+    {
+      pattern: /^bg-purple-/,
     },
   ],
 } satisfies Config;
